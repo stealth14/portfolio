@@ -22,7 +22,7 @@ Hacer click en este enlace [http://localhost:3000](http://localhost:3000) .
 
 La API se encuentra publicada en el siguiente enlace https://e03r16avmc.execute-api.us-east-1.amazonaws.com.
 
-Repositorio: https://github.com/stealth14/ronny-cajas-portfolio-api.git
+Repositorio (contiene detalles de la implementación): https://github.com/stealth14/ronny-cajas-portfolio-api.git
 
 Puede consumir los endpoints desde postman o haciendo click en los siguientes enlaces:
 
