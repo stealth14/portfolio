@@ -9,7 +9,11 @@ export default interface User {
   html_url: string;
   repos: Repo[];
 }
-
+/**
+ *
+ * @param username
+ * @returns {Promise<Response<User>>} Async response with user.
+ */
 export const get = async (username: string) => {
   const path = `/users/${username}`;
 
@@ -34,7 +38,11 @@ export interface Repo {
   language: string;
   watchers_count: number;
 }
-
+/**
+ *
+ * @param username
+ * @returns {Promise<Response<Repo[]>>} Async response with user repositories.
+ */
 export const getRepos = async (username: string) => {
   const path = `/users/${username}/repos`;
 
