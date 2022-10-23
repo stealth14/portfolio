@@ -17,6 +17,12 @@ npm run dev
 
 Hacer click en este enlace [http://localhost:3000](http://localhost:3000) .
 
+#### Código
+
+Esta aplicación web está desarrollada con React y Vercel. El código del ejercicio se encuentra en los siguientes archivos:
+- Archivo index.tsx => interfaz del ejercicio.
+- Archivo users.ts => funciones para consumir los servicios de github API.
+
 
 ## Evaluación Backend
 
