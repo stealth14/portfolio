@@ -38,6 +38,7 @@
 }
 
 .repos {
+  padding-top: 10px;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
@@ -45,11 +46,14 @@
 }
 
 .list {
+  margin-top: 10px;
   justify-content: center;
   text-align: center;
   height: 600px;
   overflow: scroll;
+  overflow-x: scroll;
   flex-wrap: nowrap;
+  border-radius: 10px;
 }
 
 .repos > span {

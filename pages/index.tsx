@@ -1,9 +1,19 @@
 import User, { get, getRepos, Repo } from "@/lib/users/user";
 import { LinkOutlined, SyncOutlined } from "@ant-design/icons";
-import { Avatar, Button, Col, Divider, Image, Row, Typography } from "antd";
+import {
+  Avatar,
+  Button,
+  Col,
+  Divider,
+  Image,
+  Row,
+  Typography,
+  Grid,
+} from "antd";
 import "antd/dist/antd.css";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
+const { useBreakpoint } = Grid;
 
 const RONNY_CAJAS_GITHUB_USERNAME = "stealth14";
 
@@ -11,6 +21,8 @@ export default function Home() {
   const [user, setUser] = useState<null | User>(null);
   const [repos, setRepos] = useState<Repo[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const screens = useBreakpoint();
+  const { md, lg, xl, xxl } = screens;
 
   useEffect(() => {
     (async () => {
@@ -28,7 +40,7 @@ export default function Home() {
       <div className={styles.container}>
         {user ? (
           <Row style={{ width: "100%" }}>
-            <Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+            <Col xs={24} sm={24} md={11} lg={11} xl={11} xxl={11}>
               <div className={styles.content}>
                 <Typography.Title level={1}>{user.name}</Typography.Title>
                 <Typography.Paragraph style={{ color: "gray", fontSize: 25 }}>
@@ -58,6 +70,20 @@ export default function Home() {
                 </div>
               </div>
             </Col>
+            {(md || lg || xl || xxl) && (
+              <Col span={1}>
+                {
+                  <Divider
+                    style={{
+                      height: "100%",
+                      backgroundColor: "lightgray",
+                      margin: "10px auto",
+                    }}
+                    type="vertical"
+                  />
+                }
+              </Col>
+            )}
             <Col
               xs={24}
               sm={24}
@@ -112,6 +138,12 @@ const RepoItem = ({ repo }: { repo: Repo }) => {
           {repo.name} <LinkOutlined />
         </Typography.Link>
       </Divider>
+      <div>{repo.description}</div>
+      <div style={{ display: "flex" }}>
+        <Item label="Tamaño" value={`${repo.size} líneas`} />
+        <Item label="Lenguaje" value={repo.language} />
+        <Item label="Seguidores" value={String(repo.watchers_count)} />
+      </div>
     </>
   );
 };

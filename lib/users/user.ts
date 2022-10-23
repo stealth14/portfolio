@@ -29,6 +29,10 @@ export interface Repo {
   html_url: string;
   disabled: boolean;
   private: boolean;
+  description: string;
+  size: number;
+  language: string;
+  watchers_count: number;
 }
 
 export const getRepos = async (username: string) => {
